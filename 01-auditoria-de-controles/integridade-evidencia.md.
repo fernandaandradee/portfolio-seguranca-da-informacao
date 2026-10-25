@@ -1,0 +1,15 @@
+Verificação de Integridade da Evidência
+
+Algoritmo utilizado: SHA-256
+
+Arquivo original verificado: saida/relatorio_auditoria.md
+
+Hash SHA-256 registrado no Codespaces:
+
+4430b77ab3fbef5408733319d3ecefd49c75566005d32a1fdc47b3ca850718ef
+
+Resultado da verificação: OK
+
+O comando sha256sum -c confirmou que o relatório original correspondia ao hash registrado no momento da verificação.
+
+Observação: esse resultado se refere ao arquivo original do ambiente acadêmico.
