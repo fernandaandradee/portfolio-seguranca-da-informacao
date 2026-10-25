@@ -1,0 +1,41 @@
+Comandos utilizados — Auditoria de Controles
+
+Os comandos abaixo foram utilizados para analisar uma configuração simulada de servidor Linux.
+
+1. Identificar contas com UID 0
+
+awk -F: '$3 == 0 {print $1, "-> UID", $3}' saida/servidor/etc/passwd
+
+Finalidade: localizar contas com UID 0, que representa privilégios de superusuário no ambiente Linux.
+
+2. Identificar contas sem senha configurada
+
+awk -F: '$2 == "" {print "SEM SENHA:", $1}' saida/servidor/etc/shadow
+
+Finalidade: localizar campos de senha vazios no arquivo simulado shadow.
+
+3. Encontrar arquivos com permissão de escrita para outros usuários
+
+find saida/servidor/financeiro -type f -perm -o+w
+
+Finalidade: localizar arquivos que permitem escrita para a categoria de permissões “outros”.
+
+4. Identificar contas de funcionários desligados
+
+grep -i "desligad" saida/servidor/etc/passwd
+
+Finalidade: procurar descrições de contas que mencionam desligamento.
+
+5. Calcular o hash SHA-256 do relatório
+
+sha256sum saida/relatorio_auditoria.md | tee saida/relatorio_auditoria.sha256
+
+Finalidade: calcular o hash do relatório e salvar o resultado para conferência posterior.
+
+6. Verificar a integridade
+
+sha256sum -c saida/relatorio_auditoria.sha256
+
+Finalidade: comparar o conteúdo atual do arquivo com o hash registrado.
+
+Observação: os caminhos e resultados se referem ao ambiente acadêmico simulado. 
