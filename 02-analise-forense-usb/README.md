@@ -1,4 +1,4 @@
-Análise Forense de Dispositivo USB
+Hash, cifra AES e assinatura digital
 
 Tipo: Projeto acadêmico — Auditoria Forense de Sistemas Digitais.
 
